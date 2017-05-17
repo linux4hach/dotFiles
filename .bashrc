@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -68,8 +69,6 @@ esac
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
 
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
@@ -79,7 +78,6 @@ fi
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
-alias l='ls -CF'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -97,9 +95,9 @@ fi
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
-if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-    . /etc/bash_completion
-fi
+#if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+#    . /etc/bash_completion
+#fi
 
 
 
@@ -107,9 +105,8 @@ fi
 
 if [ "$PS1" ]; then	# if running interactively, then run till 'fi' at EOF:
 
-# source ~/.bashlocalrc	# settings that vary per workstation
+#source ~/.bashlocalrc	# settings that vary per workstation
 OS=$(uname)		# for resolving pesky os differing switches
-
 
 
 
@@ -156,7 +153,6 @@ parse_git_branch() {
 }
 
 PS1='\[\033[01;31m\]\u\[\033[01;36m\]@\[\033[01;32m\]\h\[\033[01;33m\]:\[\033[01;33m\]\w\[\033[01;31m\]$(parse_git_branch)\[\033[00;32m\]\n\$'	# red, cyan, green, yellow with green output
-fi
 
 export BUILDROOT=/opt/HachDev/BuildSystems/cm130/buildroot-at91
 export KERNEL=/opt/HachDev/BuildSystems/cm130/linux-hach
@@ -164,3 +160,7 @@ export CM130=/opt/HachDev/Projects/cm130
 export PATH=/opt/Programs/devTools/smartgithg-6_0_7/bin:$PATH
 export PATH=/opt/Programs/powerUSB/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
+
+fi
+
+
