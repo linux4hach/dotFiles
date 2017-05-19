@@ -161,6 +161,7 @@ export CM130=/opt/HachDev/Projects/cm130
 export PATH=/opt/Programs/devTools/smartgithg-6_0_7/bin:$PATH
 export PATH=/opt/Programs/powerUSB/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
+export VMWARE_USE_SHIPPED_LIBS='yes'
 export VISUAL=vim
 fi
 
