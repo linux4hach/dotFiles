@@ -163,6 +163,16 @@ export PATH=/opt/Programs/powerUSB/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export VMWARE_USE_SHIPPED_LIBS='yes'
 export VISUAL=vim
+
+if which tmux >/dev/null 2>&1; then
+   test -z ${TMUX} && tmux
+
+   while test -z ${TMUX}; do
+      tmux attach || break
+   done
+fi
+
+
 fi
 
 
