@@ -164,14 +164,17 @@ export PATH=$HOME/.cargo/bin:$PATH
 export VMWARE_USE_SHIPPED_LIBS='yes'
 export VISUAL=vim
 
-if which tmux >/dev/null 2>&1; then
-   test -z ${TMUX} && tmux
+# I want to attach to an existing tmux session if it already exists and is available, otherwise I
+# want to create a new one.
 
-   while test -z ${TMUX}; do
-      tmux attach || break
-   done
+if [[ -z "TMUX" ]]; then
+   ID="tmux ls || grep -vm1 attached | cut -d; f1'"
+   if [[-z "$ID" ]]; then
+      tmux new-session
+   else
+      tmux attach-session -t "$ID"
+   fi
 fi
-
 
 fi
 
