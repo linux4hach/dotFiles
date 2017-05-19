@@ -167,14 +167,25 @@ export VISUAL=vim
 # I want to attach to an existing tmux session if it already exists and is available, otherwise I
 # want to create a new one.
 
-if [[ -z "TMUX" ]]; then
-   ID="tmux ls || grep -vm1 attached | cut -d; f1'"
-   if [[-z "$ID" ]]; then
+if [[ -z $TMUX ]]; then
+   ID=$(tmux ls 2>/dev/null | grep -vm1 attached | cut -d: -f1)
+   if [[ -z $ID ]]; then
       tmux new-session
    else
       tmux attach-session -t "$ID"
    fi
 fi
+
+# I want to detach tmux if it is present...but if it is not I want to exit the shell...soo
+
+exit() {
+
+   if [[ -z $TMUX ]]; then
+      builtin exit
+   else
+      tmux detach 
+   fi
+}
 
 fi
 
