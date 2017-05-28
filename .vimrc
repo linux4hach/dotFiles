@@ -17,6 +17,7 @@ Plugin 'VundleVim/Vundle.vim'
 " " Keep Plugin commands between vundle#begin/end.
 " " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
+Plugin 'craigemery/vim-autotag'
 Plugin 'scrooloose/nerdtree'
 Plugin 'rust-lang/rust.vim'
 Plugin 'xolox/vim-misc'
@@ -30,7 +31,8 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'elzr/vim-json'
 Plugin 'tomtom/tinykeymap_vim'
 Plugin 'uarun/vim-protobuf'
-
+Plugin 'majutsushi/tagbar'
+Plugin 'vim-scripts/taglist.vim'
 "
 " " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -104,6 +106,12 @@ au BufRead,BufNewFile *py,*pyw,*.c,*.h,*.pl,*.pm  set tabstop=3
 " C and perl : tabs (pre-existing files) or 3 spaces (new files)
 au BufRead,BufNewFile *.py,*pyw,*.php set shiftwidth=3
 au BufRead,BufNewFile *.py,*.pyw,*.php set expandtab
+
+" These are the bufreads for rust-tags
+autocmd BufRead *.rs :setlocal tags=./rusty_tags.vi;/
+autocmd BufWrite *.rs :silent! exec "!rusty-tags vi --quite --start-dir=" .expand(%:p:h') . "&"
+autocmd BufRead *.rs :setlocal  tags=./.rusty-tags.vi;/,$RUST_SRC_PATH/rusty-tags.vi 
+
 
 fu Select_c_style()
   if search('^\t', 'n', 150)
@@ -194,8 +202,9 @@ set directory=~/.vimtmp
 let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
 
 " These are my mappings of my function keys
-map <C-F5> :NERDTreeToggle <CR>
-map <C-F6>  :TlistOpen <CR>
+nmap <F5> :NERDTreeToggle<CR>
+nmap <F6>  :TlistToggle<CR>
+nmap <F7> :TagbarToggle<CR>
 
 " These allow me to automatically run NERDTree when opening vim
 " autocmd VimEnter * TlistOpen
