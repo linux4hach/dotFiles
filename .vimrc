@@ -109,8 +109,8 @@ au BufRead,BufNewFile *.py,*.pyw,*.php set expandtab
 
 " These are the bufreads for rust-tags
 autocmd BufRead *.rs :setlocal tags=./rusty_tags.vi;/
-autocmd BufWrite *.rs :silent! exec "!rusty-tags vi --quite --start-dir=" .expand(%:p:h') . "&"
-autocmd BufRead *.rs :setlocal  tags=./.rusty-tags.vi;/,$RUST_SRC_PATH/rusty-tags.vi 
+autocmd BufWrite *.rs :silent! exec "!rusty_tags vi --quite --start-dir=" .expand(%:p:h') . "&"
+autocmd BufRead *.rs :setlocal  tags=./.rusty_tags.vi;/,$RUST_SRC_PATH/rusty-tags.vi 
 
 
 fu Select_c_style()
