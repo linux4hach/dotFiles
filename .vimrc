@@ -78,7 +78,7 @@ filetype indent on
 set modeline
 set mouse=a
 set nocompatible
-
+set cryptmethod=blowfish
 " vimrc file for following the coding standards specified in PEP 7 & 8.
 "
 " To use this file, source it in your own personal .vimrc file (``source
@@ -156,6 +156,18 @@ au BufRead,BufNewFile *.c,*.h set formatoptions-=c formatoptions-=o formatoption
 " C: yes
 " Perl: yes
 au BufNewFile *.py,*.pyw,*.c,*.h,*.pm,*.php set fileformat=unix
+
+" These commands set up the program to read a binary file as a hex file
+augroup Binary
+   autocmd!
+   autocmd BufReadPre *.bin let &bin=1
+   autocmd BufReadPost *.bin if &bin | %!xxd
+   autocmd BufReadPost *.bin set ft=xxd | endif
+   autocmd BufWritePre *.bin if &bin | %!xxd -r
+   autocmd BufWritePre *.bin endif
+   autocmd BufWritePost *.bin if &bin | %!xxd
+   autocmd BufWritePost *.bin set nomod | endif
+augroup END
 
 
 " ----------------------------------------------------------------------------
