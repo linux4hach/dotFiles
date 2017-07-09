@@ -33,6 +33,8 @@ Plugin 'tomtom/tinykeymap_vim'
 Plugin 'uarun/vim-protobuf'
 Plugin 'majutsushi/tagbar'
 Plugin 'vim-scripts/taglist.vim'
+Plugin 'chrisbra/csv.vim' 
+Plugin 'racer-rust/vim-racer'
 "
 " " All of your Plugins must be added before the following line
 call vundle#end()            " required
