@@ -1,4 +1,4 @@
-" syntax highlighting
+
 
 set nocompatible              " be iMproved, required
 set bg=dark
@@ -171,7 +171,7 @@ augroup Binary
    autocmd BufWritePost *.bin set nomod | endif
 augroup END
 
-set encoding=utf=8
+set encoding=utf-8
 
 " ----------------------------------------------------------------------------
 " The following section contains suggested settings.  While in no way required
