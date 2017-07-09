@@ -154,10 +154,10 @@ parse_git_branch() {
 
 PS1='\[\033[01;31m\]\u\[\033[01;36m\]@\[\033[01;32m\]\h\[\033[01;33m\]:\[\033[01;33m\]\w\[\033[01;31m\]$(parse_git_branch)\[\033[00;32m\]\n\$'	# red, cyan, green, yellow with green output
 
-export BUILDROOT=/opt/HachDev/BuildSystems/cm130/buildroot-at91
-export CROSS_COMPILER_CM130=/opt/HachDev/BuildSystems/cm130/buildroot-at91-crosscompile-root
-export KERNEL=/opt/HachDev/BuildSystems/cm130/linux-hach
-export CM130=/opt/HachDev/Projects/cm130
+export BUILDROOT=/opt/hachdev/buildsystems/r1307/buildroot-at91
+export CROSS_COMPILER_CM130=/opt/hachdev/sdk/r1307/
+export KERNEL=/opt/hachdev/buildsystems/r1307/linux-hach
+export CM130=/opt/hachdev/projects/r1307
 export PATH=/opt/Programs/devTools/smartgithg-6_0_7/bin:$PATH
 export PATH=/opt/Programs/powerUSB/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
