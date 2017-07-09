@@ -80,7 +80,6 @@ filetype indent on
 set modeline
 set mouse=a
 set nocompatible
-set cryptmethod=blowfish
 " vimrc file for following the coding standards specified in PEP 7 & 8.
 "
 " To use this file, source it in your own personal .vimrc file (``source
