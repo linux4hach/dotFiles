@@ -33,6 +33,7 @@ Plugin 'tomtom/tinykeymap_vim'
 Plugin 'uarun/vim-protobuf'
 Plugin 'majutsushi/tagbar'
 Plugin 'vim-scripts/taglist.vim'
+Plugin 'chrisbra/csv.vim'
 "
 " " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -169,7 +170,7 @@ augroup Binary
    autocmd BufWritePost *.bin set nomod | endif
 augroup END
 
-set encoding=utf=8
+set encoding=utf-8
 
 " ----------------------------------------------------------------------------
 " The following section contains suggested settings.  While in no way required
