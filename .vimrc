@@ -1,4 +1,4 @@
-" syntax highlighting
+
 
 set nocompatible              " be iMproved, required
 set bg=dark
@@ -34,6 +34,7 @@ Plugin 'uarun/vim-protobuf'
 Plugin 'majutsushi/tagbar'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'chrisbra/csv.vim'
+Plugin 'racer-rust/vim-racer'
 "
 " " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -79,7 +80,6 @@ filetype indent on
 set modeline
 set mouse=a
 set nocompatible
-set cryptmethod=blowfish
 " vimrc file for following the coding standards specified in PEP 7 & 8.
 "
 " To use this file, source it in your own personal .vimrc file (``source
@@ -110,8 +110,8 @@ au BufRead,BufNewFile *.py,*.pyw,*.php set expandtab
 
 " These are the bufreads for rust-tags
 autocmd BufRead *.rs :setlocal tags=./rusty_tags.vi;/
-autocmd BufWrite *.rs :silent! exec "!rusty-tags vi --quite --start-dir=" .expand(%:p:h') . "&"
-autocmd BufRead *.rs :setlocal  tags=./.rusty-tags.vi;/,$RUST_SRC_PATH/rusty-tags.vi 
+autocmd BufWrite *.rs :silent! exec "!rusty_tags vi --quite --start-dir=" .expand(%:p:h') . "&"
+autocmd BufRead *.rs :setlocal  tags=./.rusty_tags.vi;/,$RUST_SRC_PATH/rusty-tags.vi 
 
 
 fu Select_c_style()
