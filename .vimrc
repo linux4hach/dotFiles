@@ -32,7 +32,6 @@ Plugin 'elzr/vim-json'
 Plugin 'tomtom/tinykeymap_vim'
 Plugin 'uarun/vim-protobuf'
 Plugin 'majutsushi/tagbar'
-Plugin 'vim-scripts/taglist.vim'
 Plugin 'chrisbra/csv.vim'
 Plugin 'racer-rust/vim-racer'
 "
@@ -217,8 +216,7 @@ let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
 
 " These are my mappings of my function keys
 nmap <F5> :NERDTreeToggle<CR>
-nmap <F6>  :TlistToggle<CR>
-nmap <F7> :TagbarToggle<CR>
+nmap <F6> :TagbarToggle<CR>
 
 " These allow me to automatically run NERDTree when opening vim
 " autocmd VimEnter * TlistOpen
