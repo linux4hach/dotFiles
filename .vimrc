@@ -1,5 +1,3 @@
-
-
 set nocompatible              " be iMproved, required
 set bg=dark
 filetype off                  " required
@@ -34,6 +32,7 @@ Plugin 'uarun/vim-protobuf'
 Plugin 'majutsushi/tagbar'
 Plugin 'chrisbra/csv.vim'
 Plugin 'racer-rust/vim-racer'
+Plugin 'fatih/vim-go'
 "
 " " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -224,6 +223,36 @@ nmap <F6> :TagbarToggle<CR>
 map <leader>gt:call TimeLapse() <CR>
 let g:zipPlugin_ext = '*.zip,*.jar,*.xpi,*.ja,*.war,*.ear,*.celzip,*.oxt,*.kmz,*.wsz,*.xap,*.docx,*.docm,*.dotx,*.dotm,*.potx,*.potm,*.ppsx,*.ppsm,*.pptx,*.pptm,*.ppam,*.sldx,*.thmx,*.crtx,*.vdw,*.glox,*.gcsx,*.gqsx'
 
+
+
+let g:tagbar_type_go = {
+   \ 'ctagstype' : 'go',
+   \ 'kinds'     : [
+      \ 'p:package',
+      \ 'i:imports:1',
+      \ 'c:constants',
+      \ 'v:variables',
+      \ 't:types',
+      \ 'n:interfaces',
+      \ 'w:fields',
+      \ 'e:embedded',
+      \ 'm:methods',
+      \ 'r:constructor',
+      \ 'f:functions'
+   \ ],
+   \ 'sro' : '.',
+   \ 'kind2scope' : {
+      \ 't' : 'ctype',
+      \ 'n' : 'ntype'
+   \ },
+   \ 'scope2kind' : {
+      \ 'ctype' : 't',
+      \ 'ntype' : 'n'
+   \ },
+   \ 'ctagsbin'  : 'gotags',
+   \ 'ctagsargs' : '-sort -silent'
+   \ }
+
 let g:tagbar_type_rust = {
     \ 'ctagstype' : 'rust',
     \ 'kinds' : [
@@ -237,3 +266,5 @@ let g:tagbar_type_rust = {
         \'i:impls,trait implementations',
     \]
     \}
+
+
