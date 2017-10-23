@@ -156,8 +156,10 @@ PS1='\[\033[01;31m\]\u\[\033[01;36m\]@\[\033[01;32m\]\h\[\033[01;33m\]:\[\033[01
 
 export BUILDROOT=/opt/hachdev/buildsystems/r1307/buildroot-at91
 export CROSS_COMPILER_CM130=/opt/hachdev/sdk/r1307/
+export SDK_HQD=/opt/hachdev/sdk/r1701/
 export KERNEL=/opt/hachdev/buildsystem/r1307/linux-hach
 export CM130=/opt/hachdev/project/r1307
+export HQD=/opt/hachdev/project/r1701/r1701_fw
 export PATH=/opt/Programs/devTools/smartgithg-6_0_7/bin:$PATH
 export PATH=/opt/Programs/powerUSB/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
@@ -165,4 +167,5 @@ export PATH=$HOME/go/bin:$PATH
 export VMWARE_USE_SHIPPED_LIBS='yes'
 export VISUAL=vim
 export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
+source /opt/Programs/git-subrepo/.rc
 fi
