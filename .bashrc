@@ -152,6 +152,16 @@ parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* (.*)/(1)/'
 }
 
+#tmux happieness
+if [ -z "$SSH_CONNECTION" ] ; then
+TMUXNAME="TMUX_$(echo $SSH_CONNECTION | awk '{gsub(/\./,"_");print $1}')"
+alias tmux='tmux -2'
+if [ -z "$TMUX" ]; then
+       echo "Tmux will start now";
+       tmux new -s $TMUXNAME || tmux a -t $TMUXNAME;
+fi
+fi
+
 PS1='\[\033[01;31m\]\u\[\033[01;36m\]@\[\033[01;32m\]\h\[\033[01;33m\]:\[\033[01;33m\]\w\[\033[01;31m\]$(parse_git_branch)\[\033[00;32m\]\n\$'	# red, cyan, green, yellow with green output
 
 export BUILDROOT=/opt/hachdev/buildsystems/r1307/buildroot-at91
