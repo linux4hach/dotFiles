@@ -33,6 +33,8 @@ Plugin 'majutsushi/tagbar'
 Plugin 'chrisbra/csv.vim'
 Plugin 'racer-rust/vim-racer'
 Plugin 'fatih/vim-go'
+Plugin 'lervag/vimtex'
+Plugin 'kergoth/vim-bitbake'
 "
 " " All of your Plugins must be added before the following line
 call vundle#end()            " required
