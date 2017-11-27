@@ -154,10 +154,17 @@ parse_git_branch() {
 
 PS1='\[\033[01;31m\]\u\[\033[01;36m\]@\[\033[01;32m\]\h\[\033[01;33m\]:\[\033[01;33m\]\w\[\033[01;31m\]$(parse_git_branch)\[\033[00;32m\]\n\$'	# red, cyan, green, yellow with green output
 
-export BUILDROOT=/opt/hachdev/buildsystems/r1307/buildroot-at91
-export CROSS_COMPILER_CM130=/opt/hachdev/sdk/r1307/
-export SDK_HQD=/opt/hachdev/sdk/r1701/
-export KERNEL=/opt/hachdev/buildsystem/r1307/linux-hach
+export HACHDEV=/opt/hachdev
+export BUILDSYSTEM=${HACHDEV}/buildystem
+export SDK=${HACHDEV}/sdk
+export PROJECT=${HACHDEV}/project
+export R1307_BS=${BUILDSYSTEM}/r1307/buildroot-at91
+export R1307_SDK=${SDK}/r1307
+export R1307_PJ=${PROJECT}/r1307
+export R1702_BS=${BUILDSYSTEM}/r1702/buildroot-at91
+export R1702_SDK=${SDK}/r1702
+export R1702_PJ=${PROJECT}/r1702
+export R1701_SDK=/opt/hachdev/sdk/r1701/
 export CM130=/opt/hachdev/project/r1307
 export HQD=/opt/hachdev/project/r1701/r1701_fw
 export PATH=/opt/Programs/devTools/smartgithg-6_0_7/bin:$PATH
