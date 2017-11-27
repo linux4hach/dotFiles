@@ -35,6 +35,8 @@ Plugin 'racer-rust/vim-racer'
 Plugin 'fatih/vim-go'
 Plugin 'lervag/vimtex'
 Plugin 'kergoth/vim-bitbake'
+Plugin 'timonv/vim-cargo'
+
 "
 " " All of your Plugins must be added before the following line
 call vundle#end()            " required
