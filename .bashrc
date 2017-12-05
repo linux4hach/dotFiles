@@ -152,16 +152,6 @@ parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* (.*)/(1)/'
 }
 
-#tmux happieness
-if [ -z "$SSH_CONNECTION" ] ; then
-TMUXNAME="TMUX_$(echo $SSH_CONNECTION | awk '{gsub(/\./,"_");print $1}')"
-alias tmux='tmux -2'
-if [ -z "$TMUX" ]; then
-       echo "Tmux will start now";
-       tmux new -s $TMUXNAME || tmux a -t $TMUXNAME;
-fi
-fi
-
 PS1='\[\033[01;31m\]\u\[\033[01;36m\]@\[\033[01;32m\]\h\[\033[01;33m\]:\[\033[01;33m\]\w\[\033[01;31m\]$(parse_git_branch)\[\033[00;32m\]\n\$'	# red, cyan, green, yellow with green output
 
 export HACHDEV=/opt/hachdev
@@ -170,7 +160,7 @@ export SDK=${HACHDEV}/sdk
 export PROJECT=${HACHDEV}/project
 export R1307_BS=${BUILDSYSTEM}/r1307/buildroot-at91
 export R1307_SDK=${SDK}/r1307
-export R1307_PJ=${PROJECT}/r1307
+export R1307_PJ=${PROJECT}/r1307/r1702altarchitecture
 export R1702_BS=${BUILDSYSTEM}/r1702/buildroot-at91
 export R1702_SDK=${SDK}/r1702
 export R1702_PJ=${PROJECT}/r1702
@@ -181,7 +171,8 @@ export PATH=/opt/Programs/devTools/smartgithg-6_0_7/bin:$PATH
 export PATH=/opt/Programs/powerUSB/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/go/bin:$PATH
-export VMWARE_USE_SHIPPED_LIBS='yes'
 export VISUAL=vim
 export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
+source /opt/Programs/git-subrepo/.rc
+
 fi
