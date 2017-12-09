@@ -171,7 +171,9 @@ export PATH=/opt/Programs/devTools/smartgithg-6_0_7/bin:$PATH
 export PATH=/opt/Programs/powerUSB/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/go/bin:$PATH
+export PATH=$HOME/Scripts:$PATH
 export PATH=$HOME/bin:$PATH
+export VMWARE_USE_SHIPPED_LIBS='yes'
 export VISUAL=vim
 export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
 source /opt/Programs/git-subrepo/.rc
