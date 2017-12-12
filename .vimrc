@@ -37,6 +37,8 @@ Plugin 'lervag/vimtex'
 Plugin 'kergoth/vim-bitbake'
 Plugin 'timonv/vim-cargo'
 Plugin 'SirVer/ultisnips'
+Plugin 'Rip-Rip/clang_complete'
+
 "
 " " All of your Plugins must be added before the following line
 call vundle#end()            " required
