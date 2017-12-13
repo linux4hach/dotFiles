@@ -176,6 +176,7 @@ export PATH=$HOME/bin:$PATH
 export VMWARE_USE_SHIPPED_LIBS='yes'
 export VISUAL=vim
 export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
+export EDITOR=vim
 source /opt/Programs/git-subrepo/.rc
 
 fi
