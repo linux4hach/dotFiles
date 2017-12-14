@@ -213,8 +213,8 @@ syntax on
 filetype plugin indent on
 
 " Change backup directory to a standard one
-set backupdir=~/.vimtmp
-set directory=~/.vimtmp
+set backupdir=~/opt/hachdev/.vimtmp
+set directory=~/opt/hachdev/.vimtmp
 
 "Configuration for pydiction
 let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
