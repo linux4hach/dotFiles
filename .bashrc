@@ -154,6 +154,5 @@ parse_git_branch() {
 
 PS1='\[\033[01;31m\]\u\[\033[01;36m\]@\[\033[01;32m\]\h\[\033[01;33m\]:\[\033[01;33m\]\w\[\033[01;31m\]$(parse_git_branch)\[\033[00;32m\]\n\$'	# red, cyan, green, yellow with green output
 
-source /opt/Programs/git-subrepo/.rc
 
 fi
