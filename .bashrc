@@ -178,6 +178,7 @@ export VISUAL=vim
 export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
 eval $(thefuck=alias fuck)
 alias crap="fuck"
+export EDITOR=vim
 source /opt/Programs/git-subrepo/.rc
 
 fi
