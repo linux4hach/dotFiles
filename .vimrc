@@ -39,7 +39,7 @@ Plugin 'timonv/vim-cargo'
 Plugin 'SirVer/ultisnips'
 Plugin 'Rip-Rip/clang_complete'
 Plugin 'jansenm/vim-cmake'
-Plugin 'sirvir/ultisnips'
+Plugin 'honza/vim-snippets'
 
 "
 " " All of your Plugins must be added before the following line
@@ -224,7 +224,7 @@ let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
 " These are my mappings of my function keys
 nmap <F5> :NERDTreeToggle<CR>
 nmap <F6> :TagbarToggle<CR>
-
+nmap <F7> :UltiSnipsEdit<CR>
 " These allow me to automatically run NERDTree when opening vim
 " autocmd VimEnter * TlistOpen
 " autocmd VimEnter * NERDTree 
@@ -275,4 +275,11 @@ let g:tagbar_type_rust = {
     \]
     \}
 
+" Trigger configuration. 
+let g:UltiSnipsExpandTrigger="<c-e>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsUsePythonVersion=3

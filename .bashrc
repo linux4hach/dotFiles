@@ -176,8 +176,10 @@ export PATH=$HOME/bin:$PATH
 export VMWARE_USE_SHIPPED_LIBS='yes'
 export VISUAL=vim
 export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
-eval $(thefuck --alias fuck)
-alias crap="fuck"
+export CC=/usr/bin/clang
+export CXX=/usr/bin/clang++
+eval $(thefuck --alias fuck) # OK this is an awesome app...not so awesome name 
+alias ugh="fuck" # here I alias it to ugh instead
 export EDITOR=vim
 source /opt/Programs/git-subrepo/.rc
 
