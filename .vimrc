@@ -39,6 +39,7 @@ Plugin 'timonv/vim-cargo'
 Plugin 'SirVer/ultisnips'
 Plugin 'Rip-Rip/clang_complete'
 Plugin 'jansenm/vim-cmake'
+Plugin 'sirvir/ultisnips'
 
 "
 " " All of your Plugins must be added before the following line
