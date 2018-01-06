@@ -66,8 +66,8 @@ set number
 set smarttab
 set fileformats=unix,dos,mac " support all three, in this order
 set formatoptions=tcqor " t=text, c=comments, q=format with "gq", o,r=autoinsert comment leader
-set cindent " indent on cinwords set shiftwidth=3                " set shiftwidth to 3 spaces" 
-set tabstop=3                   " set tab to 3 spaces
+set cindent " indent on cinwords set shiftwidth=5                " set shiftwidth to 5 spaces" 
+set tabstop=5                   " set tab to 5 spaces
 set showmatch                   " Show matching brackets/braces/parantheses.
 set background=dark     " set background to dark
 set showcmd                             " Show (partial) command in status line.
@@ -80,12 +80,16 @@ set showmatch
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%02l,%02v]\ [%p%%]\ [LEN=%L] "Shows detailed status line with formatting
 set laststatus=2 "This Makes the status bar visible
 set mat=5
-set tabstop=3 shiftwidth=3 expandtab
+set tabstop=5 shiftwidth=5 expandtab
 filetype plugin on
 filetype indent on
 set modeline
 set mouse=a
 set nocompatible
+set cursorline
+set cursorcolumn
+
+highlight CursorLine guibg=lightgreen ctermbg=lightblue
 " vimrc file for following the coding standards specified in PEP 7 & 8.
 "
 " To use this file, source it in your own personal .vimrc file (``source
@@ -105,13 +109,13 @@ set nocompatible
 
 " Number of spaces that a pre-existing tab is equal to.
 " For the amount of space used for a new tab use shiftwidth.
-au BufRead,BufNewFile *py,*pyw,*.c,*.h,*.pl,*.pm  set tabstop=3
+au BufRead,BufNewFile *py,*pyw,*.c,*.h,*.pl,*.pm  set tabstop=5
 
 " What to use for an indent.
 " This will affect Ctrl-T and 'autoindent'.
-" Python and PHP: 3 spaces
-" C and perl : tabs (pre-existing files) or 3 spaces (new files)
-au BufRead,BufNewFile *.py,*pyw,*.php set shiftwidth=3
+" Python and PHP: 5 spaces
+" C and perl : tabs (pre-existing files) or 5 spaces (new files)
+au BufRead,BufNewFile *.py,*pyw,*.php set shiftwidth=5
 au BufRead,BufNewFile *.py,*.pyw,*.php set expandtab
 
 " These are the bufreads for rust-tags
@@ -122,10 +126,10 @@ autocmd BufRead *.rs :setlocal  tags=./.rusty_tags.vi;/,$RUST_SRC_PATH/rusty-tag
 
 fu Select_c_style()
   if search('^\t', 'n', 150)
-    set shiftwidth=3
+    set shiftwidth=5
     set noexpandtab
   el 
-    set shiftwidth=3
+    set shiftwidth=5
     set expandtab
   en
 endf
