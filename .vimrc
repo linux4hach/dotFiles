@@ -39,6 +39,8 @@ Plugin 'timonv/vim-cargo'
 Plugin 'SirVer/ultisnips'
 Plugin 'Rip-Rip/clang_complete'
 Plugin 'jansenm/vim-cmake'
+Plugin 'jalcine/cmake.vim'
+
 Plugin 'linux4hach/vim-snippets'
 
 "
@@ -86,7 +88,7 @@ filetype indent on
 set modeline
 set mouse=a
 set nocompatible
-set cursorLine
+set cursorline
 highlight CursorLine guibg=lightblue ctermbg=lightgray
 set cursorcolumn
 
