@@ -229,6 +229,7 @@ let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
 nmap <F5> :NERDTreeToggle<CR>
 nmap <F6> :TagbarToggle<CR>
 nmap <F7> :UltiSnipsEdit<CR>
+nmap <F8> :set list!
 " These allow me to automatically run NERDTree when opening vim
 " autocmd VimEnter * TlistOpen
 " autocmd VimEnter * NERDTree 
