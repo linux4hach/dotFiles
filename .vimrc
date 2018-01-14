@@ -39,6 +39,8 @@ Plugin 'timonv/vim-cargo'
 Plugin 'SirVer/ultisnips'
 Plugin 'Rip-Rip/clang_complete'
 Plugin 'jansenm/vim-cmake'
+Plugin 'jalcine/cmake.vim'
+
 Plugin 'linux4hach/vim-snippets'
 
 "
@@ -87,9 +89,9 @@ set modeline
 set mouse=a
 set nocompatible
 set cursorline
+highlight CursorLine guibg=lightblue ctermbg=lightgray
 set cursorcolumn
 
-highlight CursorLine guibg=lightgreen ctermbg=lightblue
 " vimrc file for following the coding standards specified in PEP 7 & 8.
 "
 " To use this file, source it in your own personal .vimrc file (``source
