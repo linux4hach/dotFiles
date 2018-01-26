@@ -31,13 +31,11 @@ Plugin 'tomtom/tinykeymap_vim'
 Plugin 'uarun/vim-protobuf'
 Plugin 'majutsushi/tagbar'
 Plugin 'chrisbra/csv.vim'
-Plugin 'racer-rust/vim-racer'
 Plugin 'fatih/vim-go'
 Plugin 'lervag/vimtex'
 Plugin 'kergoth/vim-bitbake'
 Plugin 'timonv/vim-cargo'
 Plugin 'SirVer/ultisnips'
-Plugin 'Rip-Rip/clang_complete'
 Plugin 'jansenm/vim-cmake'
 Plugin 'jalcine/cmake.vim'
 
@@ -88,9 +86,9 @@ filetype indent on
 set modeline
 set mouse=a
 set nocompatible
-set cursorline
-highlight CursorLine guibg=lightblue ctermbg=lightgray
-set cursorcolumn
+"set cursorline
+"highlight CursorLine guibg=lightblue ctermbg=lightgray
+"set cursorcolumn
 
 " vimrc file for following the coding standards specified in PEP 7 & 8.
 "
@@ -128,10 +126,10 @@ autocmd BufRead *.rs :setlocal  tags=./.rusty_tags.vi;/,$RUST_SRC_PATH/rusty-tag
 
 fu Select_c_style()
   if search('^\t', 'n', 150)
-    set shiftwidth=5
+    set shiftwidth=2
     set noexpandtab
   el 
-    set shiftwidth=5
+    set shiftwidth=2
     set expandtab
   en
 endf
