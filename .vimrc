@@ -229,6 +229,7 @@ let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
 nmap <F5> :NERDTreeToggle<CR>
 nmap <F6> :TagbarToggle<CR>
 nmap <F7> :UltiSnipsEdit<CR>
+nmap <F8> :set list!<CR>
 " These allow me to automatically run NERDTree when opening vim
 " autocmd VimEnter * TlistOpen
 " autocmd VimEnter * NERDTree 
@@ -287,6 +288,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsUsePythonVersion=3
-
+let g:clang_library_path='/usr/lib64/libclang.so'
+let g:ycm_global_ycm_extra_conf = '.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 
 let g:rustfmt_autosave = 1
