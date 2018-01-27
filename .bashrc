@@ -176,11 +176,17 @@ export PATH=$HOME/bin:$PATH
 export VMWARE_USE_SHIPPED_LIBS='yes'
 export VISUAL=vim
 export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
-export CC=/usr/bin/clang
-export CXX=/usr/bin/clang++
+#export CC=/usr/bin/clang
+#export CXX=/usr/bin/clang++
 eval $(thefuck --alias fuck) # OK this is an awesome app...not so awesome name 
 alias ugh="fuck" # here I alias it to ugh instead
 export EDITOR=vim
 source /opt/Programs/git-subrepo/.rc
 
 fi
+
+PATH="/home/christopher/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/christopher/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/christopher/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/christopher/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/christopher/perl5"; export PERL_MM_OPT;
