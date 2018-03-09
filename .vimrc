@@ -65,9 +65,6 @@ filetype plugin on
 " " see :h vundle for more details or wiki for FAQ
 " " Put your non-Plugin stuff after this line
 
-set bg=dark
-syntax on
-colorscheme elflord
 
 set ruler
 set number
@@ -122,15 +119,14 @@ au BufRead,BufNewFile *py,*pyw,*.c,*.h,*.pl,*.pm  set tabstop=5
 " What to use for an indent.
 " This will affect Ctrl-T and 'autoindent'.
 " Python and PHP: 5 spaces
-" C and perl : tabs (pre-existing files) or 5 spaces (new files)
-au BufRead,BufNewFile *.py,*pyw,*.php 
-               \ set shiftwidth=4
-               \ set softtabstop=4
-               \ set tabstop=4
-               \ set textwidth=79
-               \ set expandtab
-               \ set autoindent
-               \ set fileformat=unix
+" C and perl : tabs (pre-existing files) or 4 spaces (new files)
+au BufRead,BufNewFile *.py,*pyw,*.php set shiftwidth=4
+au BufRead,BufNewFile *.py,*pyw,*.php set softtabstop=4
+au BufRead,BufNewFile *.py,*pyw,*.php set tabstop=4
+au BufRead,BufNewFile *.py,*pyw,*.php set textwidth=79
+au BufRead,BufNewFile *.py,*pyw,*.php set expandtab
+au BufRead,BufNewFile *.py,*pyw,*.php set autoindent
+au BufRead,BufNewFile *.py,*pyw,*.php set fileformat=unix
 
 au BufRead,BufNewFile *.py,*.pyw,*.php set expandtab
 
@@ -341,7 +337,8 @@ if has ('gui_running')
      set background=dark
      colorscheme solarized
 else
-     colorscheme zenburn
+     set background=dark
+     colorscheme elflord
 endif
 " allow toggle between solarized theme
 call togglebg#map("<F4>")
