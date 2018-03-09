@@ -47,7 +47,7 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'nvie/vim-flake8'
 Plugin 'jnurmine/Zenburn'
 Plugin 'altercation/vim-colors-solarized'
-
+Plugin 'vim-airline/vim-airline'
 
 "
 " " All of your Plugins must be added before the following line
