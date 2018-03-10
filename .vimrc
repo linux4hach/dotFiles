@@ -35,10 +35,8 @@ Plugin 'fatih/vim-go'
 Plugin 'lervag/vimtex'
 Plugin 'kergoth/vim-bitbake'
 Plugin 'timonv/vim-cargo'
-Plugin 'SirVer/ultisnips'
 Plugin 'jansenm/vim-cmake'
 Plugin 'jalcine/cmake.vim'
-
 Plugin 'linux4hach/vim-snippets'
 
 "
