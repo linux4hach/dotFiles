@@ -1,6 +1,6 @@
 set nocompatible              " be iMproved, required
-set bg=dark
 filetype off                  " required
+
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -37,7 +37,16 @@ Plugin 'kergoth/vim-bitbake'
 Plugin 'timonv/vim-cargo'
 Plugin 'jansenm/vim-cmake'
 Plugin 'jalcine/cmake.vim'
+Plugin 'pboettch/vim-cmake-syntax'
+Plugin 'moll/vim-node'
 Plugin 'linux4hach/vim-snippets'
+Plugin 'tmhedberg/SimpylFold'
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'nvie/vim-flake8'
+Plugin 'jnurmine/Zenburn'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'vim-airline/vim-airline'
 
 "
 " " All of your Plugins must be added before the following line
@@ -55,9 +64,6 @@ filetype plugin on
 " " see :h vundle for more details or wiki for FAQ
 " " Put your non-Plugin stuff after this line
 
-set bg=dark
-syntax on
-colorscheme elflord
 
 set ruler
 set number
@@ -112,8 +118,15 @@ au BufRead,BufNewFile *py,*pyw,*.c,*.h,*.pl,*.pm  set tabstop=5
 " What to use for an indent.
 " This will affect Ctrl-T and 'autoindent'.
 " Python and PHP: 5 spaces
-" C and perl : tabs (pre-existing files) or 5 spaces (new files)
-au BufRead,BufNewFile *.py,*pyw,*.php set shiftwidth=5
+" C and perl : tabs (pre-existing files) or 4 spaces (new files)
+au BufRead,BufNewFile *.py,*pyw,*.php set shiftwidth=4
+au BufRead,BufNewFile *.py,*pyw,*.php set softtabstop=4
+au BufRead,BufNewFile *.py,*pyw,*.php set tabstop=4
+au BufRead,BufNewFile *.py,*pyw,*.php set textwidth=79
+au BufRead,BufNewFile *.py,*pyw,*.php set expandtab
+au BufRead,BufNewFile *.py,*pyw,*.php set autoindent
+au BufRead,BufNewFile *.py,*pyw,*.php set fileformat=unix
+
 au BufRead,BufNewFile *.py,*.pyw,*.php set expandtab
 
 " These are the bufreads for rust-tags
@@ -191,8 +204,8 @@ set encoding=utf-8
 " a binary file when executing the text file): ``set bomb``
 
 " For full syntax highlighting:
-"``let python_highlight_all=1``
-"``syntax on``
+let python_highlight_all=1
+syntax on``
 
 " Automatically indent based on file type: ``filetype indent on``
 " Keep indentation level from previous line: ``set autoindent``
@@ -233,7 +246,6 @@ nmap <F8> :set list!<CR>
 " autocmd VimEnter * NERDTree 
 map <leader>gt:call TimeLapse() <CR>
 let g:zipPlugin_ext = '*.zip,*.jar,*.xpi,*.ja,*.war,*.ear,*.celzip,*.oxt,*.kmz,*.wsz,*.xap,*.docx,*.docm,*.dotx,*.dotm,*.potx,*.potm,*.ppsx,*.ppsm,*.pptx,*.pptm,*.ppam,*.sldx,*.thmx,*.crtx,*.vdw,*.glox,*.gcsx,*.gqsx'
-
 
 
 let g:tagbar_type_go = {
@@ -290,3 +302,44 @@ let g:clang_library_path='/usr/lib64/libclang.so'
 let g:ycm_global_ycm_extra_conf = '.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 
 let g:rustfmt_autosave = 1
+
+" Remap move to splits to more logical options 
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Setup folding
+set foldmethod=indent
+set foldlevel=99
+nnoremap <space> za
+let g:SimpylFold_docstring_preview=1
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g    :YcmCompleter GoToDefinitionsElseDeclaration<CR>
+
+"python with virtualenv support
+py << EOF
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+     project_base_dir = os.environ['VIRTUAL_ENV']
+     activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+     execfile(activate_this, dict(__file__=activate_this))
+EOF
+let python_highlight_all=1
+syntax on
+" ignore files in NERDTree that end in .pyc
+let NERDTreeIgnore=['\.pyc$', '\~-$']
+
+" Set color scheme
+if has ('gui_running')
+     set background=dark
+     colorscheme solarized
+else
+     set background=dark
+     colorscheme elflord
+endif
+" allow toggle between solarized theme
+call togglebg#map("<F4>")
+
+set clipboard=unnamedplus
