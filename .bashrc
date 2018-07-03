@@ -169,7 +169,6 @@ export CM130=/opt/hachdev/project/r1307
 export HQD=/opt/hachdev/project/r1701/r1701_fw
 export PATH=/opt/Programs/devTools/smartgithg-6_0_7/bin:$PATH
 export PATH=/opt/Programs/powerUSB/bin:$PATH
-<<<<<<< HEAD
 export PATH=$HOME/Projects/sqatest/src:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export GOPATH=$HOME/go_workspace
