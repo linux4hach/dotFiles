@@ -169,16 +169,16 @@ export CM130=/opt/hachdev/project/r1307
 export HQD=/opt/hachdev/project/r1701/r1701_fw
 export PATH=/opt/Programs/devTools/smartgithg-6_0_7/bin:$PATH
 export PATH=/opt/Programs/powerUSB/bin:$PATH
+export PATH=$HOME/Projects/sqatest/src:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
-export PATH=$HOME/go/bin:$PATH
+export GOPATH=$HOME/go_workspace
+export PATH=$GOPATH/bin:$PATH
 export PATH=$HOME/Scripts:$PATH
 export VMWARE_USE_SHIPPED_LIBS='yes'
 export VISUAL=vim
 export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
-eval $(thefuck --alias fuck) # OK this is an awesome app...not so awesome name 
-alias ugh="fuck" # here I alias it to ugh instead
 export EDITOR=vim
-source /opt/Programs/git-subrepo/.rc
+#source /opt/Programs/git-subrepo/.rc
 
 fi
 
