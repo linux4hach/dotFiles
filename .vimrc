@@ -21,10 +21,10 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'xolox/vim-misc'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'gberenfield/dotvim'
-Plugin 'xolox/vim-easytags'
 Plugin 'Shougo/neocomplcache.vim'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-markdown'
+Plugin 'chrisfair/vim-easytags'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'elzr/vim-json'
 Plugin 'tomtom/tinykeymap_vim'
@@ -301,6 +301,7 @@ let g:clang_library_path='/usr/lib64/libclang.so'
 let g:ycm_global_ycm_extra_conf = '.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:ycm_rust_src_path = '/home/cfair/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
 let g:rustfmt_autosave = 1
+let @p='i ^[p' 
 
 " Remap move to splits to more logical options 
 nnoremap <C-J> <C-W><C-J>

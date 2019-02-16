@@ -12,8 +12,10 @@ general {
 }
 
 order += "disk /"
-order += "ethernet _first_"
+order += "disk /home"
+order += "disk /opt"
 order += "load"
+order += "cpu_usage"
 order += "tztime local"
 
 ethernet _first_ {
@@ -21,6 +23,12 @@ ethernet _first_ {
         format_up = "E: %ip (%speed)"
         format_down = "E: down"
 }
+
+cpu_usage {
+     format = "cpu: %cpu0 %cpu1 %cpu2 %cpu3 %cpu4 %cpu5 %cpu6 %cpu7 %cpu8 %cpu8 %cpu9 %cpua %cpub"
+
+}
+
 
 tztime local {
         format = "%Y-%m-%d %H:%M:%S"
@@ -31,5 +39,18 @@ load {
 }
 
 disk "/" {
-        format = "%avail"
+        format = "rootfs: %avail"
 }
+
+disk "/home" {
+        format = "home: %avail"
+}
+
+disk "/opt" {
+        format = "opt: %avail"
+}
+
+
+
+
+

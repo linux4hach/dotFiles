@@ -167,10 +167,13 @@ export R1701_PJ=${PROJECT}/r1701/r1701_fw
 export R1701_SDK=/opt/hachdev/sdk/r1701/
 export CM130=/opt/hachdev/project/r1307
 export HQD=/opt/hachdev/project/r1701/r1701_fw
+export PATH=/opt/Programs/ccacheBin:$PATH
 export PATH=/opt/Programs/devTools/smartgithg-6_0_7/bin:$PATH
 export PATH=/opt/Programs/powerUSB/bin:$PATH
 export PATH=$HOME/Projects/sqatest/src:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
+export PATH=/opt/hachdev/sdk/r1701/sysroots/x86_64-deysdk-linux/usr/bin/arm-dey-linux-gnueabi:$PATH
+export PATH=/opt/Programs/ccacheBin:$PATH
 export GOPATH=$HOME/go_workspace
 export PATH=$GOPATH/bin:$PATH
 export PATH=$HOME/Scripts:$PATH
@@ -178,13 +181,8 @@ export VMWARE_USE_SHIPPED_LIBS='yes'
 export VISUAL=vim
 export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
 export EDITOR=vim
-       TERMINAL=xfce4-terminal
-#source /opt/Programs/git-subrepo/.rc
+export TERMINAL=xfce4-terminal
 
 fi
-
-PATH="/home/christopher/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/home/christopher/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/christopher/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/christopher/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/christopher/perl5"; export PERL_MM_OPT;
+fortune | cowsay -f tux
+set -o vi

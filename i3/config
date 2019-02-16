@@ -11,9 +11,16 @@
 
 set $mod Mod4
 set $app Mod1 + Shift + Control
+set $app_focus Mod1 + Shift + Control + Command
+set $WALLPAPER /home/cfair/Pictures/Wallpapers/enterprise8.jpg 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:noto 10 
+font pango:Liberation Sans Mono 12 
+
+
+
+# Wallpaper
+exec --no-startup-id feh --bg-scale $WALLPAPER
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -47,9 +54,11 @@ bindsym $mod+d exec dmenu_run
 bindsym $app+q exec qtcreator
 bindsym $app+e exec evolution
 bindsym $app+f exec firefox
+bindsym $app+v exec vivaldi-stable
 bindsym $app+t exec xfce4-terminal 
 bindsym $app+m exec minicom
-bindsym $app+s exec start_r1701
+bindsym $app+s exec start_r1701.sh
+bindsym $app+p exec password-gorilla 
 bindsym $app+k exec kill_r1701.sh
 bindsym $app+l exec i3lock -n -c 000000 
 
@@ -150,16 +159,29 @@ bindsym $mod+Shift+e exit
 
 # auto select window for certain apps on startup
 assign [class="Firefox"] 1
+assign [class="Vivaldi-stable"] 1
 assign [class="QtCreator"] 2
 assign [class="Xfce4-terminal"] 3
 assign [class="Evolution"] 4
+assign [class="Gorilla"] 1
+
+# apps to focus 
+bindsym $app_focus+q [class="QtCreator"] focus
+bindsym $app_focus+e [class="Evolution"] focus 
+bindsym $app_focus+f [class="Firefox"] focus
+bindsym $app_focus+v [class="Vivaldi-stable"] focus 
+bindsym $app_focus+t [class="xfce4-terminal"] focus
+bindsym $app_focus+p [class="Gorilla"] focus 
 
 # auto run the following applications
-exec xfce4-terminal -e "tmuxp load -y ~/.tmuxp/r1701.yaml"
+# uncomment below to run tmux with a default config on startup
+# exec xfce4-terminal -e "tmuxp load -y ~/.tmuxp/0.yaml" # do 
+exec xfce4-terminal 
 exec qtcreator
-exec firefox
+exec vivaldi-stable
 exec evolution
-
+exec nm-applet
+exec xscreensaver
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
