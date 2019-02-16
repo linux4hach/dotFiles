@@ -21,7 +21,7 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'xolox/vim-misc'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'gberenfield/dotvim'
-Plugin 'xolox/vim-easytags'
+Plugin 'chrisfair/vim-easytags'
 Plugin 'Shougo/neocomplcache.vim'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-markdown'
@@ -35,7 +35,6 @@ Plugin 'fatih/vim-go'
 Plugin 'lervag/vimtex'
 Plugin 'kergoth/vim-bitbake'
 Plugin 'timonv/vim-cargo'
-Plugin 'SirVer/ultisnips'
 Plugin 'jansenm/vim-cmake'
 Plugin 'jalcine/cmake.vim'
 Plugin 'pboettch/vim-cmake-syntax'
@@ -48,7 +47,6 @@ Plugin 'nvie/vim-flake8'
 Plugin 'jnurmine/Zenburn'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'vim-airline/vim-airline'
-
 "
 " " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -240,7 +238,6 @@ let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
 " These are my mappings of my function keys
 nmap <F5> :NERDTreeToggle<CR>
 nmap <F6> :TagbarToggle<CR>
-nmap <F7> :UltiSnipsEdit<CR>
 nmap <F8> :set list!<CR>
 " These allow me to automatically run NERDTree when opening vim
 " autocmd VimEnter * TlistOpen
@@ -300,8 +297,27 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsUsePythonVersion=3
 let g:clang_library_path='/usr/lib64/libclang.so'
-let g:ycm_global_ycm_extra_conf = '.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 
+let g:ycm_filetype_whitelist = {
+			\ "c":1,
+			\ "cpp":1,
+			\ "objc":1,
+			\ "sh":1,
+			\ "zsh":1,
+			\ "zimbu":1,
+			\ "python":1,
+			\ }
+
+let g:ycm_python_interpreter_path = '/home/christopher/python/virtualenvs/python3.6.6/bin/python'
+let g:ycm_python_sys_path = [ '~/python/virtualenvs/python3.6.6/lib/python3.6/site-packages/anki_vector' ]
+let g:ycm_extra_conf_vim_data = [
+  \  'g:ycm_python_interpreter_path',
+  \  'g:ycm_python_sys_path'
+  \]
+let g:ycm_global_ycm_extra_conf = '~/.global_extra_conf.py'
+
+
+let g:ycm_rust_src_path = '/home/cfair/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
 let g:rustfmt_autosave = 1
 
 " Remap move to splits to more logical options 
@@ -328,6 +344,8 @@ if 'VIRTUAL_ENV' in os.environ:
      execfile(activate_this, dict(__file__=activate_this))
 EOF
 let python_highlight_all=1
+
+
 syntax on
 " ignore files in NERDTree that end in .pyc
 let NERDTreeIgnore=['\.pyc$', '\~-$']
@@ -344,3 +362,6 @@ endif
 call togglebg#map("<F4>")
 
 set clipboard=unnamedplus
+
+
+

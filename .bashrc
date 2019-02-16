@@ -167,25 +167,17 @@ export R1701_PJ=${PROJECT}/r1701/r1701_fw
 export R1701_SDK=/opt/hachdev/sdk/r1701/
 export CM130=/opt/hachdev/project/r1307
 export HQD=/opt/hachdev/project/r1701/r1701_fw
-export PATH=/opt/Programs/devTools/smartgithg-6_0_7/bin:$PATH
-export PATH=/opt/Programs/powerUSB/bin:$PATH
-export GOPATH=$HOME/go_workspace
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/Programs/bibisco-linux-x64-2.0.2-SE:$PATH
+export GOPATH=$HOME/go_workspace
 export PATH=$GOPATH/bin:$PATH
 export PATH=$HOME/Scripts:$PATH
 export VMWARE_USE_SHIPPED_LIBS='yes'
 export VISUAL=vim
 export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
-eval $(thefuck --alias fuck) # OK this is an awesome app...not so awesome name 
-alias ugh="fuck" # here I alias it to ugh instead
 export EDITOR=vim
-#source /opt/Programs/git-subrepo/.rc
 
+fortune | cowsay -f dragon
 fi
 
-PATH="/home/christopher/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/home/christopher/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/christopher/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/christopher/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/christopher/perl5"; export PERL_MM_OPT;
+
