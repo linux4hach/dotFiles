@@ -47,6 +47,7 @@ Plugin 'nvie/vim-flake8'
 Plugin 'jnurmine/Zenburn'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'vim-airline/vim-airline'
+Plugin 'simplyzhao/cscope_maps.vim'
 "
 " " All of your Plugins must be added before the following line
 call vundle#end()            " required
