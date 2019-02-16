@@ -21,10 +21,10 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'xolox/vim-misc'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'gberenfield/dotvim'
+Plugin 'chrisfair/vim-easytags'
 Plugin 'Shougo/neocomplcache.vim'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-markdown'
-Plugin 'chrisfair/vim-easytags'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'elzr/vim-json'
 Plugin 'tomtom/tinykeymap_vim'
@@ -298,7 +298,26 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsUsePythonVersion=3
 let g:clang_library_path='/usr/lib64/libclang.so'
-let g:ycm_global_ycm_extra_conf = '.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+
+let g:ycm_filetype_whitelist = {
+			\ "c":1,
+			\ "cpp":1,
+			\ "objc":1,
+			\ "sh":1,
+			\ "zsh":1,
+			\ "zimbu":1,
+			\ "python":1,
+			\ }
+
+let g:ycm_python_interpreter_path = '/home/christopher/python/virtualenvs/python3.6.6/bin/python'
+let g:ycm_python_sys_path = [ '~/python/virtualenvs/python3.6.6/lib/python3.6/site-packages/anki_vector' ]
+let g:ycm_extra_conf_vim_data = [
+  \  'g:ycm_python_interpreter_path',
+  \  'g:ycm_python_sys_path'
+  \]
+let g:ycm_global_ycm_extra_conf = '~/.global_extra_conf.py'
+
+
 let g:ycm_rust_src_path = '/home/cfair/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
 let g:rustfmt_autosave = 1
 let @p='i ^[p' 
@@ -327,6 +346,8 @@ if 'VIRTUAL_ENV' in os.environ:
      execfile(activate_this, dict(__file__=activate_this))
 EOF
 let python_highlight_all=1
+
+
 syntax on
 " ignore files in NERDTree that end in .pyc
 let NERDTreeIgnore=['\.pyc$', '\~-$']

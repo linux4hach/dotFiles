@@ -167,6 +167,7 @@ export R1701_PJ=${PROJECT}/r1701/r1701_fw
 export R1701_SDK=/opt/hachdev/sdk/r1701/
 export CM130=/opt/hachdev/project/r1307
 export HQD=/opt/hachdev/project/r1701/r1701_fw
+<<<<<<< HEAD
 export PATH=/opt/Programs/ccacheBin:$PATH
 export PATH=/opt/Programs/devTools/smartgithg-6_0_7/bin:$PATH
 export PATH=/opt/Programs/powerUSB/bin:$PATH
@@ -183,6 +184,9 @@ export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
 export EDITOR=vim
 export TERMINAL=xfce4-terminal
 
+fortune | cowsay -f dragon
 fi
 fortune | cowsay -f tux
 set -o vi
+
+
