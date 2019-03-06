@@ -170,14 +170,18 @@ export HQD=/opt/hachdev/project/r1701/r1701_fw
 export PATH=/opt/Programs/devTools/smartgithg-6_0_7/bin:$PATH
 export PATH=/opt/Programs/powerUSB/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
-export PATH=$HOME/go/bin:$PATH
+export GOROOT=/usr/local/opt/go/libexec
+export GOPATH=$HOME/go_workspace
+export PATH=$GOPATH/bin:$PATH
 export PATH=$HOME/Scripts:$PATH
 export PATH=$HOME/Library/Python/3.6/bin:$PATH
 export VMWARE_USE_SHIPPED_LIBS='yes'
 export VISUAL=vim
 export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
 export EDITOR=vim
-
+export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/java
 fi
+
+fortune | cowsay -f dragon
 
 

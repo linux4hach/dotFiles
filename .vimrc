@@ -300,7 +300,7 @@ let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsUsePythonVersion=3
 let g:clang_library_path='/usr/lib64/libclang.so'
 let g:ycm_global_ycm_extra_conf = '.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
-
+let g:ycm_rust_src_path = '/Users/cfair/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src'
 let g:rustfmt_autosave = 1
 
 " Remap move to splits to more logical options 
@@ -317,15 +317,6 @@ let g:SimpylFold_docstring_preview=1
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g    :YcmCompleter GoToDefinitionsElseDeclaration<CR>
 
-"python with virtualenv support
-py << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-     project_base_dir = os.environ['VIRTUAL_ENV']
-     activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-     execfile(activate_this, dict(__file__=activate_this))
-EOF
 let python_highlight_all=1
 syntax on
 " ignore files in NERDTree that end in .pyc
